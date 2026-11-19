@@ -1,0 +1,24 @@
+{
+  // Cloudflare Worker that serves elbrando.com.
+  // The name must match the Worker's name in the Cloudflare dashboard.
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "elbrando",
+  "main": "src/index.js",
+  "compatibility_date": "2026-11-19",
+
+  // Everything in /public is published as the website.
+  // run_worker_first lets src/index.js redirect www before any page is served.
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "run_worker_first": true,
+    "html_handling": "auto-trailing-slash"
+  },
+
+  // The addresses this Worker answers on. Cloudflare keeps the DNS and
+  // certificates for these up to date on every deploy.
+  "routes": [
+    { "pattern": "elbrando.com", "custom_domain": true },
+    { "pattern": "www.elbrando.com", "custom_domain": true }
+  ]
+}

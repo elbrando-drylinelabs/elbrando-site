@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>elbrando</title>
+<meta name="description" content="Brandon Lehman's corner of the internet. Recipes and other things worth keeping.">
+<meta name="theme-color" content="#2a1a14">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://elbrando.com/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#2a1a14; --bg-raised:#3a251c; --hairline:#54382b;
+  --ink:#f7ecdc; --ink-muted:#cdb9a2; --amber:#e9a23b;
+}
+* { box-sizing:border-box; margin:0; padding:0; }
+html { background:var(--bg); }
+body { min-height:100vh; background:var(--bg); color:var(--ink); font-family:Inter, system-ui, -apple-system, "Segoe UI", sans-serif; line-height:1.65; display:flex; flex-direction:column; }
+body::before { content:""; position:fixed; inset:0; pointer-events:none; z-index:0;
+  background:radial-gradient(ellipse 55% 45% at 85% 10%, rgba(233,162,59,.20), transparent 70%); }
+main, footer { position:relative; z-index:1; width:100%; max-width:760px; margin:0 auto; padding-left:24px; padding-right:24px; }
+main { flex:1; padding-top:clamp(56px, 14vh, 140px); padding-bottom:64px; }
+a { color:var(--amber); text-decoration:none; }
+h1 { font-family:Fraunces, Georgia, serif; font-weight:600; font-size:clamp(3rem, 11vw, 5.6rem); letter-spacing:-.03em; line-height:1; }
+h1 em { font-style:italic; font-weight:500; color:var(--amber); }
+.lede { margin:18px 0 48px; font-size:1.15rem; color:var(--ink-muted); }
+.eyebrow { font-size:.76rem; font-weight:500; letter-spacing:.3em; text-transform:uppercase; color:var(--ink-muted); margin-bottom:14px; }
+.list { list-style:none; }
+.list a { display:flex; justify-content:space-between; align-items:center; gap:16px; padding:20px 22px; background:var(--bg-raised); border:1px solid var(--hairline); border-radius:14px; color:var(--ink); transition:border-color .15s, transform .15s; }
+.list a:hover { border-color:var(--amber); transform:translateY(-1px); }
+.list .t { font-family:Fraunces, Georgia, serif; font-size:1.35rem; font-weight:600; }
+.list .d { display:block; font-size:.92rem; color:var(--ink-muted); }
+.list .arrow { color:var(--amber); font-size:1.4rem; }
+.list li + li { margin-top:12px; }
+footer { padding-top:24px; padding-bottom:32px; border-top:1px solid var(--hairline); font-size:.85rem; color:var(--ink-muted); }
+</style>
+</head>
+<body>
+<main>
+  <h1>el<em>brando</em></h1>
+  <p class="lede">Brandon Lehman, Oklahoma City. Recipes and other things worth keeping.</p>
+
+  <p class="eyebrow">Recipes</p>
+  <ul class="list">
+    <li><a href="/hot-toddy"><span><span class="t">Hot Toddy</span><span class="d">Whiskey, honey, lemon and hot water. 5 minutes.</span></span><span class="arrow" aria-hidden="true">&rarr;</span></a></li>
+  </ul>
+</main>
+<footer>&copy; <span id="y">2026</span> Brandon Lehman</footer>
+<script>document.getElementById("y").textContent=new Date().getFullYear();</script>
+</body>
+</html>
