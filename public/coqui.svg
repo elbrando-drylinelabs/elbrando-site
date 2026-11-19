@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Coquí">
+  <g stroke-linecap="round" fill="none" stroke="#c9a565" stroke-width="1.6">
+    <!-- hind foot toes -->
+    <path d="M17 47 L9 50.5 M17 47 L12.5 53 M18 47.5 L17.5 54"/>
+    <!-- front foot toes -->
+    <path d="M42 47 L36.5 52 M42.5 47.5 L42 54 M43 47 L48 52.5"/>
+  </g>
+  <g fill="#e2cc98">
+    <circle cx="8.6" cy="50.7" r="1.9"/><circle cx="12.2" cy="53.4" r="1.9"/><circle cx="17.5" cy="54.6" r="1.9"/>
+    <circle cx="36.1" cy="52.4" r="1.9"/><circle cx="42" cy="54.6" r="1.9"/><circle cx="48.4" cy="52.9" r="1.9"/>
+  </g>
+  <!-- body -->
+  <path d="M7 42 C5 33 13 26 24 24 C33 22.5 42 22 49 22.5 C56 23 60 27.5 59.5 32 C59 36 55.5 38 51 38.5 C45 39.5 40 42 33 44 C23 46.5 9 47 7 42 Z" fill="#bf9450"/>
+  <!-- back stripe -->
+  <path d="M9 36 C12 29 20 25.5 29 24.5 C37 23.5 45 23.3 51 24.3 C44 25 37 26.5 30 28.5 C22 30.5 14 33 9 36 Z" fill="#7d5a25"/>
+  <!-- snout stripe -->
+  <path d="M51 24.3 C55 25 58.5 27.5 59.3 31 C57 28.5 54.5 27 51 26.5 Z" fill="#7d5a25"/>
+  <!-- belly -->
+  <path d="M22 44.5 C28 41.5 38 39.5 47 39 C43 41 38 43 33 44.2 C29 45.2 25.5 45.2 22 44.5 Z" fill="#e8dcc0"/>
+  <!-- thigh -->
+  <ellipse cx="17" cy="40.5" rx="9" ry="5.6" transform="rotate(-22 17 40.5)" fill="#a37b3c"/>
+  <!-- shin to foot -->
+  <path d="M10 44.5 C13 46.5 16 47 18.5 47" stroke="#a37b3c" stroke-width="3.6" stroke-linecap="round" fill="none"/>
+  <!-- front leg -->
+  <path d="M41 37 C42.5 40.5 43 43.5 42.5 47" stroke="#bf9450" stroke-width="3.6" stroke-linecap="round" fill="none"/>
+  <!-- eye -->
+  <circle cx="50" cy="26.2" r="5.4" fill="#bf9450"/>
+  <circle cx="50.2" cy="26.2" r="4.2" fill="#14110c"/>
+  <circle cx="51.6" cy="24.8" r="1.2" fill="#f3ecd9"/>
+  <!-- eardrum -->
+  <circle cx="43.6" cy="30" r="1.8" fill="#9a6a4a" opacity=".55"/>
+</svg>

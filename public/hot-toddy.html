@@ -8,7 +8,7 @@
 <meta property="og:title" content="el Brando Hot Toddy">
 <meta property="og:description" content="100-proof whiskey, lemon, honey and a clove-studded lemon coin, topped with hot water.">
 <meta property="og:type" content="article">
-<meta name="theme-color" content="#2a1a14">
+<meta name="theme-color" content="#0f1a06">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="canonical" href="https://elbrando.com/hot-toddy">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,42 +43,44 @@
 </script>
 <style>
 :root {
-  --bg:#2a1a14; --bg-raised:#3a251c; --hairline:#54382b;
-  --ink:#f7ecdc; --ink-muted:#cdb9a2;
-  --amber:#e9a23b; --ember:#d9622b; --cream:#fbf3e6;
+  --bg:#0f1a06; --bg-raised:#1b2a0d; --hairline:#2f4417;
+  --ink:#f3ecd9; --ink-muted:#b8b996;
+  --gold:#d1a55c; --leaf:#9ab37d; --cream:#f4ecda;
 }
 * { box-sizing:border-box; margin:0; padding:0; }
 html { background:var(--bg); }
 body { min-height:100vh; background:var(--bg); color:var(--ink); font-family:Inter, system-ui, -apple-system, "Segoe UI", sans-serif; line-height:1.65; display:flex; flex-direction:column; }
 body::before { content:""; position:fixed; inset:0; pointer-events:none; z-index:0;
   background:
-    radial-gradient(ellipse 55% 45% at 85% 10%, rgba(233,162,59,.20), transparent 70%),
-    radial-gradient(ellipse 50% 50% at 5% 95%, rgba(217,98,43,.16), transparent 70%); }
+    radial-gradient(ellipse 55% 45% at 85% 8%, rgba(154,179,125,.18), transparent 70%),
+    radial-gradient(ellipse 55% 50% at 5% 95%, rgba(76,113,22,.28), transparent 70%); }
 header, main, footer { position:relative; z-index:1; width:100%; max-width:760px; margin:0 auto; padding-left:24px; padding-right:24px; }
-a { color:var(--amber); text-decoration:none; }
+a { color:var(--gold); text-decoration:none; }
 a:hover { text-decoration:underline; text-underline-offset:4px; }
 header { padding-top:22px; padding-bottom:22px; font-family:Fraunces, Georgia, serif; font-size:1.15rem; }
-header a { color:var(--ink); }
+header a { color:var(--ink); display:inline-flex; align-items:center; gap:8px; }
+header a:hover { text-decoration:none; }
+header img { width:40px; height:40px; }
 main { flex:1; padding-bottom:56px; }
 .eyebrow { font-size:.76rem; font-weight:500; letter-spacing:.3em; text-transform:uppercase; color:var(--ink-muted); }
 h1 { font-family:Fraunces, Georgia, serif; font-weight:600; font-size:clamp(2.8rem, 9vw, 4.6rem); letter-spacing:-.02em; line-height:1.02; margin:14px 0 18px; }
-h1 em { font-style:italic; font-weight:500; color:var(--amber); }
+h1 em { font-style:italic; font-weight:500; color:var(--gold); }
 .lede { font-size:1.15rem; color:var(--ink-muted); max-width:36rem; }
 .facts { display:flex; flex-wrap:wrap; gap:10px; margin:28px 0 36px; list-style:none; }
 .facts li { background:var(--bg-raised); border:1px solid var(--hairline); border-radius:999px; padding:6px 14px; font-size:.9rem; }
-.facts b { color:var(--amber); font-weight:600; }
-.mug { display:block; width:120px; height:120px; margin:8px 0 0; }
-.card { background:var(--cream); color:#2a1a14; border-radius:16px; padding:32px 32px 28px; box-shadow:0 24px 60px rgba(0,0,0,.35); }
+.facts b { color:var(--gold); font-weight:600; }
+.glass { display:block; width:120px; height:160px; margin:0 0 10px -6px; }
+.card { background:var(--cream); color:#1f1a0e; border-radius:16px; padding:32px 32px 28px; box-shadow:0 24px 60px rgba(0,0,0,.35); }
 .card + .card { margin-top:22px; }
 h2 { font-family:Fraunces, Georgia, serif; font-weight:600; font-size:1.55rem; margin-bottom:14px; }
 .card ul { list-style:none; }
-.card ul li { padding:10px 0; border-bottom:1px dashed #e2cfb4; display:flex; gap:14px; }
+.card ul li { padding:10px 0; border-bottom:1px dashed #ddd0ad; display:flex; gap:14px; }
 .card ul li:last-child { border-bottom:0; }
-.qty { min-width:7.5rem; font-weight:600; color:#a2461c; }
+.qty { min-width:7.5rem; font-weight:600; color:#7d5a25; }
 .card ol { list-style:none; counter-reset:step; }
 .card ol li { counter-increment:step; position:relative; padding:0 0 18px 48px; }
 .card ol li:last-child { padding-bottom:0; }
-.card ol li::before { content:counter(step); position:absolute; left:0; top:0; width:32px; height:32px; border-radius:50%; background:#2a1a14; color:var(--amber); font-family:Fraunces, Georgia, serif; font-weight:600; display:grid; place-items:center; }
+.card ol li::before { content:counter(step); position:absolute; left:0; top:0; width:32px; height:32px; border-radius:50%; background:#1b2a0d; color:var(--gold); font-family:Fraunces, Georgia, serif; font-weight:600; display:grid; place-items:center; }
 .tips { margin-top:36px; }
 .tips h2 { color:var(--ink); }
 .tips ul { padding-left:1.2rem; color:var(--ink-muted); }
@@ -90,7 +92,7 @@ footer { padding-top:24px; padding-bottom:32px; border-top:1px solid var(--hairl
   .qty { min-width:6rem; }
 }
 @media print {
-  body::before, header, footer, .mug { display:none; }
+  body::before, header, footer, .glass { display:none; }
   html, body { background:#fff; color:#000; }
   .card { box-shadow:none; border:1px solid #ccc; }
   .lede, .tips ul { color:#333; }
@@ -99,14 +101,52 @@ footer { padding-top:24px; padding-bottom:32px; border-top:1px solid var(--hairl
 </style>
 </head>
 <body>
-<header><a href="/">elbrando</a></header>
+<header><a href="/"><img src="/coqui.svg" alt="" width="40" height="40">elbrando</a></header>
 <main>
-  <svg class="mug" viewBox="0 0 120 120" aria-hidden="true">
-    <path d="M44 34c-6-8 6-12 0-20M60 34c-6-8 6-12 0-20M76 34c-6-8 6-12 0-20" fill="none" stroke="#cdb9a2" stroke-width="3" stroke-linecap="round" opacity=".7"/>
-    <path d="M28 44h64v38a22 22 0 0 1-22 22H50a22 22 0 0 1-22-22z" fill="#d9622b"/>
-    <path d="M92 54h6a12 12 0 0 1 0 24h-7" fill="none" stroke="#d9622b" stroke-width="7"/>
-    <ellipse cx="60" cy="44" rx="32" ry="6" fill="#e9a23b"/>
-    <circle cx="60" cy="44" r="7" fill="#fbf3e6" stroke="#e9c23b" stroke-width="2"/>
+  <svg class="glass" viewBox="0 0 120 160" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+      <linearGradient id="toddy" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#e3ad55"/>
+        <stop offset="1" stop-color="#b9782a"/>
+      </linearGradient>
+      <clipPath id="bowl"><path d="M33 22 C33 50 36 70 41 82 C44 89 50 93 60 93 C70 93 76 89 79 82 C84 70 87 50 87 22 Z"/></clipPath>
+    </defs>
+    <!-- steam -->
+    <path d="M48 16c-5-6 5-9 0-15M60 16c-5-6 5-9 0-15M72 16c-5-6 5-9 0-15" fill="none" stroke="#b8b996" stroke-width="2.6" stroke-linecap="round" opacity=".7"/>
+    <!-- drink -->
+    <g clip-path="url(#bowl)">
+      <rect x="20" y="30" width="80" height="70" fill="url(#toddy)" opacity=".92"/>
+      <rect x="20" y="30" width="80" height="2.5" fill="#f0c977" opacity=".9"/>
+      <!-- lemon coin with clove buttons -->
+      <g transform="translate(58 56)">
+        <circle r="15" fill="#f2d24a"/>
+        <circle r="12.6" fill="#f7eaa6"/>
+        <circle r="11.2" fill="#efd664"/>
+        <g stroke="#f7eaa6" stroke-width="1.2">
+          <path d="M0 0V-11M0 0L7.8 -7.8M0 0H11M0 0L7.8 7.8M0 0V11M0 0L-7.8 7.8M0 0H-11M0 0L-7.8 -7.8"/>
+        </g>
+        <g fill="#4a2a14">
+          <circle cx="0" cy="-8" r="2.1"/><circle cx="6.9" cy="-4" r="2.1"/><circle cx="6.9" cy="4" r="2.1"/>
+          <circle cx="0" cy="8" r="2.1"/><circle cx="-6.9" cy="4" r="2.1"/><circle cx="-6.9" cy="-4" r="2.1"/>
+        </g>
+        <g fill="#7a4a24">
+          <circle cx="0" cy="-8" r=".8"/><circle cx="6.9" cy="-4" r=".8"/><circle cx="6.9" cy="4" r=".8"/>
+          <circle cx="0" cy="8" r=".8"/><circle cx="-6.9" cy="4" r=".8"/><circle cx="-6.9" cy="-4" r=".8"/>
+        </g>
+      </g>
+    </g>
+    <!-- glass: bowl, handle, stem rings, foot -->
+    <g fill="none" stroke="#e8e4d6" stroke-width="2.6" stroke-linejoin="round" opacity=".9">
+      <path d="M31 20 C31 50 34 71 39.5 83 C43 91 50 95.5 60 95.5 C70 95.5 77 91 80.5 83 C86 71 89 50 89 20"/>
+      <path d="M86.5 38 C99 36 105 44 104 57 C103 69 96 76 84.5 76" stroke-width="5"/>
+      <path d="M53 96 L54 101 M67 96 L66 101"/>
+      <rect x="49" y="101" width="22" height="6" rx="3"/>
+      <rect x="49" y="109" width="22" height="6" rx="3"/>
+      <path d="M54 115 L53.5 124 C53 130 44 134 34 137 C30 138.5 31 142 36 142 H84 C89 142 90 138.5 86 137 C76 134 67 130 66.5 124 L66 115"/>
+    </g>
+    <ellipse cx="60" cy="20" rx="29" ry="3.2" fill="none" stroke="#e8e4d6" stroke-width="2.2" opacity=".9"/>
+    <!-- highlight -->
+    <path d="M38 30 C38 52 40 68 44 78" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" opacity=".35"/>
   </svg>
   <p class="eyebrow">Recipe &middot; Drinks</p>
   <h1>el Brando <em>Hot Toddy</em></h1>
@@ -114,7 +154,7 @@ footer { padding-top:24px; padding-bottom:32px; border-top:1px solid var(--hairl
 
   <ul class="facts">
     <li><b>3 min</b> total</li>
-    <li><b>1</b> mug</li>
+    <li><b>1</b> toddy glass</li>
     <li>Built in the cup</li>
   </ul>
 
