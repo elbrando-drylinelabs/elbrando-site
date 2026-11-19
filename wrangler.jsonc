@@ -1,22 +1,14 @@
 {
   // Cloudflare Worker that serves elbrando.com.
-  // The name must match the Worker's name in the Cloudflare dashboard.
+  // It reads the pages in /public from this repo's main branch on GitHub (see src/index.js),
+  // so page edits go live without redeploying. Only changes to src/index.js need a redeploy.
   "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "elbrando",
   "main": "src/index.js",
   "compatibility_date": "2026-11-19",
+  "workers_dev": false,
 
-  // Everything in /public is published as the website.
-  // run_worker_first lets src/index.js redirect www before any page is served.
-  "assets": {
-    "directory": "./public",
-    "binding": "ASSETS",
-    "run_worker_first": true,
-    "html_handling": "auto-trailing-slash"
-  },
-
-  // The addresses this Worker answers on. Cloudflare keeps the DNS and
-  // certificates for these up to date on every deploy.
+  // The addresses this Worker answers on.
   "routes": [
     { "pattern": "elbrando.com", "custom_domain": true },
     { "pattern": "www.elbrando.com", "custom_domain": true }

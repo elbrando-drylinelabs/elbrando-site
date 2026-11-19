@@ -1,8 +1,10 @@
 # elbrando.com
 
-Brandon's personal site at **https://elbrando.com**, hosted on Cloudflare Workers (same setup as the Dryline Labs site).
+Brandon's personal site at **https://elbrando.com**, served by the `elbrando` Cloudflare Worker.
 
-Once the repo is connected to the `elbrando` Worker in Cloudflare (Workers & Pages → elbrando → Settings → Build → Connect), every change saved to `main` is published automatically within a minute or two. To undo a change, revert its commit on GitHub.
+The Worker reads the files in `public/` straight from the `main` branch of this repo, so **saving a change on GitHub is all it takes**. It shows up on the site within about 5 minutes (Cloudflare caches each page for 5 minutes). To undo a change, revert its commit.
+
+Because the site reads from GitHub, this repo has to stay **public**. If it's ever made private, the site stops loading.
 
 ## What's where
 
@@ -11,8 +13,11 @@ Once the repo is connected to the `elbrando` Worker in Cloudflare (Workers & Pag
 | `public/index.html` | Home page, with the list of recipes |
 | `public/hot-toddy.html` | Hot Toddy recipe (served at `/hot-toddy`) |
 | `public/favicon.svg` | Browser-tab icon |
-| `src/index.js` | Small script that redirects www.elbrando.com to elbrando.com |
+| `public/robots.txt` | Search-engine rules |
+| `src/index.js` | The Worker: reads pages from GitHub, sends www to elbrando.com |
 | `wrangler.jsonc` | Cloudflare settings: Worker name and domains |
+
+Changing `src/index.js` itself does need a redeploy of the Worker (ask Claude).
 
 ## Adding a recipe
 
@@ -20,3 +25,5 @@ Once the repo is connected to the `elbrando` Worker in Cloudflare (Workers & Pag
 2. Change the title, description, ingredients and steps. Also update the `ld+json` block near the top, which is what Google uses for recipe results.
 3. Add a link to it in the recipe list in `public/index.html`.
 4. Commit to `main`.
+
+Images: put them in `public/` (for example `public/img/hot-toddy.jpg`) and reference them as `/img/hot-toddy.jpg`. Supported: png, jpg, webp, svg.
