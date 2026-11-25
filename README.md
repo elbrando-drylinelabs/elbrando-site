@@ -23,7 +23,7 @@ Changing `src/index.js` itself does need a redeploy of the Worker (ask Claude).
 ## Adding a recipe
 
 1. Copy `public/hot-toddy.html` to a new file, for example `public/old-fashioned.html` (served at `/old-fashioned`).
-2. Change the title, description, ingredients and steps. Also update the `ld+json` block near the top, which is what Google uses for recipe results.
+2. Change the title, description, ingredients and steps. Also update the `ld+json` block near the top, which is what Google uses for recipe results. In the "Share the recipe" script at the bottom, change `var title = "..."` to the new recipe's name (the link itself comes from the `canonical` tag, so update that too).
 3. Add a link to it in the recipe list in `public/index.html`.
 4. Commit to `main`.
 

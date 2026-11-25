@@ -38,13 +38,14 @@
     "1 cup sugar (for the syrup)",
     "1 cup water (for the syrup)",
     "2 to 3 sprigs fresh rosemary (for the syrup)",
-    "Rosemary sprigs, cranberries and lime wheels, to garnish"
+    "Dehydrated lime wheels soaked in Angostura bitters, to garnish",
+    "Rosemary sprigs, to garnish (optional)"
   ],
   "recipeInstructions": [
     { "@type": "HowToStep", "text": "Make the syrup: simmer the cranberries, sugar and water until the berries burst, about 10 minutes. Take it off the heat, add the rosemary and steep 15 to 20 minutes. Strain and chill." },
     { "@type": "HowToStep", "text": "Batch the base: stir the rum, lime juice, syrup, Cointreau and bitters together in a pitcher. Chill at least an hour." },
     { "@type": "HowToStep", "text": "Build the punch: pour the base over a large block of ice or an ice ring in a punch bowl. Top with the ginger beer and give it one gentle stir." },
-    { "@type": "HowToStep", "text": "Serve: ladle into ice-filled glasses and garnish with a rosemary sprig, a few cranberries and a lime wheel." }
+    { "@type": "HowToStep", "text": "Serve: ladle into ice-filled glasses and float an Angostura-soaked dehydrated lime wheel on top. Add a rosemary sprig if you like." }
   ]
 }
 </script>
@@ -109,6 +110,25 @@ footer { padding-top:24px; padding-bottom:32px; border-top:1px solid var(--hairl
   .lede, .tips ul { color:#333; }
   .tips h2 { color:#000; }
 }
+
+/* Share the recipe */
+.share { margin:-14px 0 34px; }
+.share-btn { display:inline-flex; align-items:center; gap:9px; font:600 .95rem Inter, system-ui, sans-serif; color:#1a0b08; background:var(--lime); border:0; border-radius:999px; padding:10px 18px; cursor:pointer; }
+.share-btn:hover { filter:brightness(1.08); }
+.share-btn svg { width:18px; height:18px; }
+.share-panel { margin-top:14px; background:var(--bg-raised); border:1px solid var(--hairline); border-radius:14px; padding:18px; max-width:30rem; }
+.share-panel label { display:block; font-size:.85rem; color:var(--ink-muted); margin-bottom:8px; }
+.share-row { display:flex; gap:8px; }
+.share-row input { flex:1; min-width:0; font:400 1rem Inter, system-ui, sans-serif; color:var(--ink); background:var(--bg); border:1px solid var(--hairline); border-radius:10px; padding:10px 12px; }
+.share-row input::placeholder { color:var(--ink-muted); opacity:.6; }
+.share-row input:focus { outline:2px solid var(--lime); outline-offset:1px; }
+.share-row button { font:600 .95rem Inter, system-ui, sans-serif; background:var(--lime); color:#1a0b08; border:0; border-radius:10px; padding:10px 16px; cursor:pointer; white-space:nowrap; }
+.share-msg { font-size:.85rem; color:var(--lime); min-height:1.3em; margin-top:8px; }
+.share-alt { display:flex; flex-wrap:wrap; gap:18px; }
+.share-alt button { background:none; border:0; color:var(--lime); font:500 .9rem Inter, system-ui, sans-serif; cursor:pointer; padding:0; }
+.share-alt button:hover { text-decoration:underline; text-underline-offset:4px; }
+.share-fine { font-size:.78rem; color:var(--ink-muted); margin-top:12px; }
+@media print { .share { display:none; } }
 </style>
 </head>
 <body>
@@ -151,12 +171,13 @@ footer { padding-top:24px; padding-bottom:32px; border-top:1px solid var(--hairl
         <circle cx="47" cy="90" r="1.2"/><circle cx="71" cy="72" r="1"/><circle cx="58" cy="114" r="1.1"/><circle cx="76" cy="100" r="1"/><circle cx="44" cy="128" r="1"/>
       </g>
     </g>
-    <!-- lime wheel on the rim -->
+    <!-- Angostura-soaked dehydrated lime wheel on the rim -->
     <g transform="translate(36 52) rotate(-20)">
-      <circle r="12" fill="#5f8f2e"/>
-      <circle r="10.2" fill="#e6f0b8"/>
-      <circle r="9" fill="#b9d45f"/>
-      <g stroke="#e6f0b8" stroke-width="1.1">
+      <circle r="12" fill="#5a4a1c"/>
+      <circle r="10.2" fill="#e3cf96"/>
+      <circle r="9" fill="#a8782f"/>
+      <circle r="9" fill="#7a2a1a" opacity=".35"/>
+      <g stroke="#e3cf96" stroke-width="1.1">
         <path d="M0 0V-9M0 0L6.4 -6.4M0 0H9M0 0L6.4 6.4M0 0V9M0 0L-6.4 6.4M0 0H-9M0 0L-6.4 -6.4"/>
       </g>
     </g>
@@ -179,6 +200,29 @@ footer { padding-top:24px; padding-bottom:32px; border-top:1px solid var(--hairl
     <li>Syrup &amp; base made ahead</li>
   </ul>
 
+  <section class="share" aria-label="Share this recipe">
+    <button type="button" class="share-btn" id="shareBtn" aria-expanded="false" aria-controls="sharePanel">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.4-4.9A8 8 0 1 1 21 12z"/></svg>
+      Share the recipe
+    </button>
+    <div class="share-panel" id="sharePanel" hidden>
+      <form id="shareForm" novalidate>
+        <label for="sharePhone">Text a link to</label>
+        <div class="share-row">
+          <input id="sharePhone" type="tel" inputmode="tel" autocomplete="off" placeholder="(405) 555-0123" aria-describedby="shareFine">
+          <button type="submit">Text it</button>
+        </div>
+        <p class="share-msg" id="shareMsg" role="status"></p>
+      </form>
+      <div class="share-alt">
+        <button type="button" id="shareCopy">Copy link</button>
+        <button type="button" id="shareNative" hidden>More ways to share</button>
+      </div>
+      <p class="share-fine" id="shareFine">Opens your messaging app with the link ready to go. Nothing is sent until you tap Send, and the number isn't saved anywhere.</p>
+    </div>
+  </section>
+
+
   <section class="card">
     <h2>Ingredients</h2>
     <h3>The punch</h3>
@@ -200,7 +244,8 @@ footer { padding-top:24px; padding-bottom:32px; border-top:1px solid var(--hairl
     </ul>
     <h3>To garnish</h3>
     <ul>
-      <li><span class="qty">Per glass</span><span>A rosemary sprig, a few cranberries and a lime wheel</span></li>
+      <li><span class="qty">Per glass</span><span>A dehydrated lime wheel soaked in Angostura bitters</span></li>
+      <li><span class="qty">Optional</span><span>A rosemary sprig</span></li>
     </ul>
   </section>
 
@@ -210,7 +255,7 @@ footer { padding-top:24px; padding-bottom:32px; border-top:1px solid var(--hairl
       <li><strong>Make the syrup.</strong> Simmer the cranberries, sugar and water until the berries burst, about 10 minutes. Take it off the heat, add the rosemary and let it steep 15&ndash;20 minutes. Strain and chill. Don't boil the rosemary, or it turns bitter.</li>
       <li><strong>Batch the base.</strong> In a pitcher, stir together the rum, lime juice, syrup, Cointreau and bitters. Chill at least an hour. It's best the same day, while the lime is fresh.</li>
       <li><strong>Build the punch.</strong> Pour the base over a large block of ice or an ice ring in a punch bowl. Top with the ginger beer and give it one gentle stir, so it keeps its fizz.</li>
-      <li><strong>Serve.</strong> Ladle into ice-filled glasses. Clap a rosemary sprig between your hands to wake it up, then garnish with it, a few cranberries and a lime wheel. &iexcl;Salud!</li>
+      <li><strong>Serve.</strong> Ladle into ice-filled glasses and float an Angostura-soaked dehydrated lime wheel on top. For a rosemary sprig too, clap it between your hands first to wake it up. &iexcl;Salud!</li>
     </ol>
   </section>
 
@@ -219,7 +264,7 @@ footer { padding-top:24px; padding-bottom:32px; border-top:1px solid var(--hairl
     <ul>
       <li><strong>Taste before the guests arrive.</strong> Cranberries vary in tartness. If it's sharp, add syrup half an ounce at a time.</li>
       <li><strong>Make an ice ring.</strong> Freeze cranberries, lime wheels and rosemary in a Bundt pan the night before. It looks great and melts slower than cubes.</li>
-      <li><strong>Smoke the rosemary.</strong> Hit each garnish sprig with a torch for a few seconds just before serving.</li>
+      <li><strong>Soak the lime wheels.</strong> Lay the dehydrated wheels in a shallow dish of Angostura for a minute or two, then shake off the extra so they don't drip. They float on top and add a hit of spice with every sip.</li>
       <li><strong>Zero-proof cups.</strong> Mix a little syrup, lime and ginger beer, with a splash of apple cider, for anyone not drinking.</li>
     </ul>
   </section>
@@ -229,5 +274,46 @@ footer { padding-top:24px; padding-bottom:32px; border-top:1px solid var(--hairl
   <a href="/">More from elbrando &rarr;</a>
 </footer>
 <script>document.getElementById("y").textContent=new Date().getFullYear();</script>
+<script>
+(function () {
+  var title = "el Brando Harvest Daiquiri";
+  var url = document.querySelector('link[rel="canonical"]').href;
+  var btn = document.getElementById("shareBtn"), panel = document.getElementById("sharePanel");
+  var form = document.getElementById("shareForm"), phone = document.getElementById("sharePhone");
+  var msg = document.getElementById("shareMsg"), copy = document.getElementById("shareCopy"), more = document.getElementById("shareNative");
+  function say(t) { msg.textContent = t; }
+
+  btn.addEventListener("click", function () {
+    var open = panel.hidden;
+    panel.hidden = !open;
+    btn.setAttribute("aria-expanded", String(open));
+    if (open) phone.focus();
+  });
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var raw = phone.value.trim(), digits = raw.replace(/\D/g, ""), num;
+    if (raw.charAt(0) === "+" && digits.length >= 8) num = "+" + digits;
+    else if (digits.length === 10) num = "+1" + digits;
+    else if (digits.length === 11 && digits.charAt(0) === "1") num = "+" + digits;
+    else { say("Enter a 10-digit phone number."); phone.focus(); return; }
+    say("Opening your messaging app\u2026");
+    window.location.href = "sms:" + num + "?&body=" + encodeURIComponent(title + " from elbrando: " + url);
+  });
+
+  copy.addEventListener("click", function () {
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(url).then(function () { say("Link copied."); }, function () { say(url); });
+    } else { say(url); }
+  });
+
+  if (navigator.share) {
+    more.hidden = false;
+    more.addEventListener("click", function () {
+      navigator.share({ title: title, text: title, url: url }).catch(function () {});
+    });
+  }
+})();
+</script>
 </body>
 </html>
