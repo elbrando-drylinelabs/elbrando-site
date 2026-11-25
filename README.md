@@ -12,6 +12,7 @@ Because the site reads from GitHub, this repo has to stay **public**. If it's ev
 | --- | --- |
 | `public/index.html` | Home page, with the list of recipes |
 | `public/hot-toddy.html` | Hot Toddy recipe (served at `/hot-toddy`) |
+| `public/harvest-daiquiri.html` | Harvest Daiquiri punch recipe (served at `/harvest-daiquiri`), with its own cranberry color scheme |
 | `public/favicon.svg` | Browser-tab icon |
 | `public/robots.txt` | Search-engine rules |
 | `src/index.js` | The Worker: reads pages from GitHub, sends www to elbrando.com |
